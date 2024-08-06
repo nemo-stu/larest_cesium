@@ -28,7 +28,14 @@
   <body>
     <div id="cesiumContainer"></div>
     <script>
-      var viewer = new Cesium.Viewer("cesiumContainer");
+      var viewer = new Cesium.Viewer("cesiumContainer"), {
+          terrainProvider: Cesium.createWorldTerrain(),
+          imageryProvider: new Cesium.OpenStreetMapImageryProvider({
+              url : 'https://a.tile.openstreetmap.org/'
+          })
+      });
+
+      
       (async function () {
         try {
           const tileset = await Cesium.Cesium3DTileset.fromUrl('./sample/chino/tileset.json');
