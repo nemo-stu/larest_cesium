@@ -37,6 +37,12 @@
       
       (async function () {
         try {
+          const viewer = new Cesium.Viewer("cesiumContainer", {
+            terrainProvider: await Cesium.createWorldTerrainAsync(),
+            imageryProvider: Cesium.createWorldImageryAsync({
+              url : 'https://a.tile.openstreetmap.org/'
+            })
+          });
           const tileset = await Cesium.Cesium3DTileset.fromUrl('./sample/chino/tileset.json');
           viewer.scene.primitives.add(tileset);
           tileset.style = new Cesium.Cesium3DTileStyle({
