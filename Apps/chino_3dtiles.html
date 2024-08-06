@@ -45,10 +45,10 @@
             roll : 0.0
           }
         });
-      }).otherwise(function(error) {
-        console.log(error);
+        } catch (error) {
+        console.log(`Failed to load tileset: ${error}`);
       }
-      });
+      })();
     </script>
   </body>
 </html>
