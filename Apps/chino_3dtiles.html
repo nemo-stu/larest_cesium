@@ -52,22 +52,3 @@
     </script>
   </body>
 </html>
-(async function () {
-      try {
-        const tileset = await Cesium.Cesium3DTileset.fromUrl('./sample/koto/tileset.json');
-        viewer.scene.primitives.add(tileset);
-        tileset.style = new Cesium.Cesium3DTileStyle({
-          markerSymbol: '?'
-        });
-        viewer.camera.flyTo({
-          destination: Cesium.Cartesian3.fromDegrees(139.795, 35.574, 4000),
-          orientation : {
-            heading : Cesium.Math.toRadians(0.0),
-            pitch : Cesium.Math.toRadians(-30.0),
-            roll : 0.0
-          }
-        });
-      } catch (error) {
-        console.log(`Failed to load tileset: ${error}`);
-      }
-    })();
