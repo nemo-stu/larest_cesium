@@ -28,6 +28,7 @@
   <body>
     <div id="cesiumContainer"></div>
     <script>
+      (async function () {
       var viewer = new Cesium.Viewer("cesiumContainer");
       try {
         const tileset = await Cesium.Cesium3DTileset.fromUrl('https://nemo-stu.github.io/latest_cesium/Apps/sample/koto/tileset.json');
@@ -46,6 +47,7 @@
       } catch (error) {
         console.log(`Failed to load tileset: ${error}`);
       }
+    })();
     </script>
   </body>
 </html>
