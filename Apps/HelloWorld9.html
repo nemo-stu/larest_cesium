@@ -29,11 +29,8 @@
     <div id="cesiumContainer"></div>
     <script>
       var viewer = new Cesium.Viewer("cesiumContainer", {
-    	terrainProvider : new Cesium.CesiumTerrainProvider({
-        url : Cesium.IonResource.fromAssetId(3956),
-        requestVertexNormals : true
-    		});
-	});
+          terrainProvider: Cesium.createWorldTerrain()
+      });
 
       viewer.homeButton.viewModel.command.beforeExecute.addEventListener(
           function(e) {
