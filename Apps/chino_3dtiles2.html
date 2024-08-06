@@ -28,10 +28,10 @@
   <body>
     <div id="cesiumContainer"></div>
     <script>
-      var viewer = new Cesium.Viewer("cesiumContainer"), {
-          terrainProvider: Cesium.createWorldTerrainAsync(),
-          imageryProvider: Cesium.createWorldImageryAsync({
-            url : 'https://a.tile.openstreetmap.org/'
+      var viewer = new Cesium.Viewer("cesiumContainer", {
+        terrainProviderViewModels: Cesium.createWorldTerrainAsync(),
+        selectedImageryProviderViewModel: Cesium.createWorldImageryAsync({
+          url: 'https://a.tile.openstreetmap.org/'
         })
       });
       
