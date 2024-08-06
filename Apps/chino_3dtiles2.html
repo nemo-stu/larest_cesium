@@ -30,7 +30,7 @@
     <script>
       var viewer = new Cesium.Viewer("cesiumContainer", {
         terrainProviderViewModels: Cesium.createWorldTerrainAsync(),
-        selectedImageryProviderViewModel: Cesium.createWorldImageryAsync({
+        selectedImageryProviderViewModel: Cesium.OpenStreetMapImageryProvider({
           url: 'https://a.tile.openstreetmap.org/'
         })
       });
