@@ -28,8 +28,8 @@
   <body>
     <div id="cesiumContainer"></div>
     <script>
-      (async function () {
       var viewer = new Cesium.Viewer("cesiumContainer");
+      (async function () {
       try {
         const tileset = await Cesium.Cesium3DTileset.fromUrl('./sample/koto/tileset.json');
         viewer.scene.primitives.add(tileset);
