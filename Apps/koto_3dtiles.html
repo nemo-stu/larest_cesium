@@ -30,7 +30,7 @@
     <script>
       var viewer = new Cesium.Viewer("cesiumContainer");
       try {
-        const tileset = await Cesium.Cesium3DTileset.fromUrl(url :'./sample/koto/tileset.json');
+        const tileset = await Cesium.Cesium3DTileset.fromUrl('https://nemo-stu.github.io/latest_cesium/Apps/sample/koto/tileset.json');
         viewer.scene.primitives.add(tileset);
         tileset1.style = new Cesium.Cesium3DTileStyle({
           markerSymbol: '?'
