@@ -11,9 +11,9 @@
       content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"
     />
     <title>Hello World!</title>
-    <script src="../Build/CesiumUnminified/Cesium.js"></script>
+    <script src="../Build/Cesium/Cesium.js"></script>
     <style>
-      @import url(../Build/CesiumUnminified/Widgets/widgets.css);
+      @import url(../Build/Cesium/Widgets/widgets.css);
       html,
       body,
       #cesiumContainer {
@@ -42,7 +42,7 @@
               heightReference: Cesium.HeightReference.RELATIVE_TO_GROUND,
               extrudedHeight: 200.0,
               extrudedHeightReference: Cesium.HeightReference.RELATIVE_TO_GROUND,
-              material : Cesium.Color.PURPLE,
+              material : Cesium.Color.RED.withAlpha(0.5),
               outline : true,
               outlineColor : Cesium.Color.BLACK
           }
@@ -51,6 +51,7 @@
       viewer.camera.flyTo({
           destination: Cesium.Cartesian3.fromDegrees(139.691734969185, 35.689513446065, 1000.0),
       });
+
     </script>
   </body>
 </html>
