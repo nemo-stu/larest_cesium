@@ -31,11 +31,13 @@
       (async function () {
         try {
           const viewer = new Cesium.Viewer("cesiumContainer", {
-            terrainProvider: await Cesium.createWorldTerrainAsync(),
-            imageryProvider: await Cesium.ImageryProvider.loadImage({
-              url : 'https://a.tile.openstreetmap.org/'
-            })
+            terrainProvider: await Cesium.createWorldTerrainAsync()
           });
+
+          const imageryLayer = new Cesium.ImageryLayer(new Cesium.OpenStreetMapImageryProvider({
+            url: "https://tile.openstreetmap.org/"
+          }));
+          scene.imageryLayers.add(imageryLayer);
 
           const tileset = await Cesium.Cesium3DTileset.fromUrl('./sample/chino/tileset.json');
           viewer.scene.primitives.add(tileset);
