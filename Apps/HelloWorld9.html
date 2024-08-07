@@ -33,6 +33,7 @@
           const viewer = new Cesium.Viewer("cesiumContainer", {
             terrainProvider: await Cesium.createWorldTerrainAsync()
           });
+          
           viewer.homeButton.viewModel.command.beforeExecute.addEventListener(
           function(e) {
               e.cancel = true;
@@ -81,7 +82,7 @@
               style: Cesium.LabelStyle.FILL_AND_OUTLINE
           }
       });
-
+          
       viewer.camera.flyTo({
           destination: Cesium.Cartesian3.fromDegrees(139.6995, 35.6836, 1000.0),
           orientation : {
@@ -91,12 +92,9 @@
           }
       });
         } catch (error) {
-        console.log(`Failed to load tileset: ${error}`);
-      }
-    })();
-
-      
-
+          console.log(`Failed to load tileset: ${error}`);
+        }
+      })();
     </script>
   </body>
 </html>
