@@ -29,7 +29,6 @@
     <div id="cesiumContainer"></div>
     <script>
       var viewer = new Cesium.Viewer("cesiumContainer");
-      (async function () {
         try {
           const tileset = await Cesium.Cesium3DTileset.fromUrl('./sample/chino/tileset.json');
           viewer.scene.primitives.add(tileset);
@@ -48,7 +47,6 @@
         } catch (error) {
           console.log(`Failed to load tileset: ${error}`);
         }
-      })();
     </script>
   </body>
 </html>
