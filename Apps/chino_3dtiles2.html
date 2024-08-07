@@ -33,7 +33,7 @@
           const viewer = new Cesium.Viewer("cesiumContainer", {
             terrainProvider: await Cesium.createWorldTerrainAsync(),
             imageryProvider: await Cesium.ImageryProvider.loadImage({
-              url : 'https://a.tile.openstreetmap.org/'
+              imageryProvider : 'https://a.tile.openstreetmap.org/'
             })
           });
 
