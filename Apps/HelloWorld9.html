@@ -31,10 +31,7 @@
       (async function () {
         try {
           const viewer = new Cesium.Viewer("cesiumContainer", {
-            terrainProvider: await Cesium.createWorldTerrainAsync(),
-            imageryProvider: await Cesium.createWorldImageryAsync({
-              url : 'https://a.tile.openstreetmap.org/'
-            })
+            terrainProvider: await Cesium.createWorldTerrainAsync()
           });
           viewer.homeButton.viewModel.command.beforeExecute.addEventListener(
           function(e) {
