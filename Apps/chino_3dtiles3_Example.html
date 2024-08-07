@@ -32,10 +32,10 @@
           terrainProvider: Cesium.createWorldTerrain()
       });
 
-      var tileset1 = new Cesium.Cesium3DTileset({ url: './sample/chino/tileset.json'});
-      tileset1.readyPromise.then(function(tileset1) {
+      var tileset = new Cesium.Cesium3DTileset({ url: './sample/chino/tileset.json'});
+      tileset.readyPromise.then(function(tileset1) {
         viewer.scene.primitives.add(tileset1);
-        tileset1.style = new Cesium.Cesium3DTileStyle({
+        tileset.style = new Cesium.Cesium3DTileStyle({
           color: {
             conditions:[
               ["Number(${地上階数}) >= 4","rgba(255, 0, 0,0.5)"],
