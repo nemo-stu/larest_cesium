@@ -33,11 +33,8 @@
           const viewer = new Cesium.Viewer("cesiumContainer", {
             terrainProvider: await Cesium.createWorldTerrainAsync()
           });
-        } catch (error) {
-          console.log(`Failed to load tileset: ${error}`);
-        }
-      })();
-      viewer.homeButton.viewModel.command.beforeExecute.addEventListener(
+
+          viewer.homeButton.viewModel.command.beforeExecute.addEventListener(
           function(e) {
               e.cancel = true;
               viewer.camera.flyTo({
@@ -94,6 +91,11 @@
               roll : 0.0
           }
       });
+          
+        } catch (error) {
+          console.log(`Failed to load tileset: ${error}`);
+        }
+      })();
       
     </script>
   </body>
