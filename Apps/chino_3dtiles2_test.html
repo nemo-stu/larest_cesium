@@ -32,7 +32,11 @@
         try {
           const viewer = new Cesium.Viewer("cesiumContainer", {
             terrainProvider: await Cesium.createWorldTerrainAsync(),
-            baseLayer: new Cesium.ImageryLayer(new Cesium.EllipsoidTerrainProvider())
+            baseLayer: await Cesium.BingMapsImageryProvider.fromUrl(
+              "https://dev.virtualearth.net", {
+              key: "get-yours-at-https://www.bingmapsportal.com/",
+              mapStyle: Cesium.BingMapsStyle.AERIAL
+              });
           });
 
           const tileset = await Cesium.Cesium3DTileset.fromUrl('./sample/chino/tileset.json');
