@@ -32,7 +32,7 @@
         try {
           const viewer = new Cesium.Viewer("cesiumContainer", {
             terrainProvider: await Cesium.createWorldTerrainAsync(),
-            baseLayer: new Cesium.ImageryLayer(Cesium.ImageryLayer.fromWorldImagery())
+            baseLayer: new Cesium.ImageryLayer(new Cesium.ImageryLayer.fromWorldImagery())
           });
 
           const tileset = await Cesium.Cesium3DTileset.fromUrl('./sample/chino/tileset.json');
